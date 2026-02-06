@@ -25,6 +25,7 @@
 
 abstract class MessageTypes {
   static const String Text = 'm.text';
+  static const String SML = 'm.sml';
   static const String Emote = 'm.emote';
   static const String Notice = 'm.notice';
   static const String Image = 'm.image';
