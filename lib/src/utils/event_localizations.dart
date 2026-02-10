@@ -20,6 +20,7 @@ import 'package:collection/collection.dart';
 
 import 'package:matrix/encryption.dart';
 import 'package:matrix/matrix.dart';
+import 'package:matrix/msc_extensions/extension_sml_events/models/sml_event_content.dart';
 
 abstract class EventLocalizations {
   // As we need to create the localized body off of a different set of parameters, we
@@ -307,5 +308,12 @@ abstract class EventLocalizations {
           event.senderFromMemoryOrFallback.calcDisplayname(i18n: i18n),
         ),
     PollEventContent.endType: (event, i18n, body) => i18n.pollHasBeenEnded,
+
+    SmlEventContent.type: (event, i18n, body) => i18n.sharedSml(
+      event.senderFromMemoryOrFallback.calcDisplayname(i18n: i18n),
+    ),
+    SmlEventContent.mscType: (event, i18n, body) => i18n.sharedSml(
+      event.senderFromMemoryOrFallback.calcDisplayname(i18n: i18n),
+    ),
   };
 }

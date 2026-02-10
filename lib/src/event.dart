@@ -849,8 +849,7 @@ class Event extends MatrixEvent {
 
   /// Returns if this is a known event type.
   bool get isEventTypeKnown =>
-      EventLocalizations.localizationsMap.containsKey(type) || ['m.sml', 'org.matrix.msc9999.sml'].contains(type);
-  // todo actually add eventLocalization for m.sml events
+      EventLocalizations.localizationsMap.containsKey(type);
 
   /// Returns a localized String representation of this event. For a
   /// room list you may find [withSenderNamePrefix] useful. Set [hideReply] to

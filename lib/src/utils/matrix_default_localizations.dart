@@ -327,4 +327,7 @@ class MatrixDefaultLocalizations extends MatrixLocalizations {
 
   @override
   String get pollHasBeenEnded => 'Poll has been ended';
+
+  @override
+  String sharedSml(String senderName) => '$senderName shared semantic data';
 }
