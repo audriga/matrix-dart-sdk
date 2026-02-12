@@ -1,16 +1,22 @@
 class SmlEventContent {
   static const String type = 'm.sml';
 
+  static const String mTextJsonKey = 'org.matrix.msc1767.text';
   // todo 9999 is a placeholder, since this is not actually a msc yet.
   static const String mscType = 'org.matrix.msc9999.sml';
+  final String mText;
   final dynamic markup;
 
   const SmlEventContent({
+    required this.mText,
     required this.markup,
   });
 
   factory SmlEventContent.fromJson(Map<String, dynamic> json) =>
-      SmlEventContent(markup: json[type] ?? json[mscType]);
+      SmlEventContent(
+          mText: json[mTextJsonKey],
+          markup: json[type] ?? json[mscType],
+      );
 
   bool get isMarkupValid {
     if (markup is Map<String, dynamic>) {
@@ -21,4 +27,9 @@ class SmlEventContent {
       return false;
     }
   }
+
+  Map<String, dynamic> toJson() => {
+    mTextJsonKey: mText,
+    SmlEventContent.type: markup,
+  };
 }
