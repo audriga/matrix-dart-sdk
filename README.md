@@ -1,3 +1,7 @@
+# Fork
+
+This is a fork to enable structured data. See [structured data](STRUCTURED_DATA.md)
+
 # Matrix SDK
 
 Matrix (matrix.org) SDK written in dart.
